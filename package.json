@@ -1,0 +1,28 @@
+{
+  "name": "wallet-api",
+  "version": "1.0.0",
+  "description": "This is a micro service to administration the money 💵🤑 of the user. This wallet is built with nodejs 🟩 and typescript 🟦",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zearkiatos/wallet-api.git"
+  },
+  "keywords": [
+    "TypeScript",
+    "Repository",
+    "Pattern",
+    "NodeJS",
+    "JavaScript",
+    "Backend",
+    "microservice"
+  ],
+  "author": "Pedro Capriles <caprilespe@outlook.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zearkiatos/wallet-api/issues"
+  },
+  "homepage": "https://github.com/zearkiatos/wallet-api#readme"
+}
