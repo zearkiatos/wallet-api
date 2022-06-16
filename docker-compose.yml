@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wallet-api
+    env_file:
+      - .env
+    volumes: 
+      - ".:/usr/src/app"
+    ports:
+      - "3001:3000"
