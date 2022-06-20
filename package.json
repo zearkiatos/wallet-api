@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/zearkiatos/wallet-api#readme",
   "dependencies": {
+    "awilix": "^7.0.3",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "typescript": "^4.7.3"
