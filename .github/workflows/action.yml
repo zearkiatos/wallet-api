@@ -33,5 +33,3 @@ jobs:
         PORT: ${{ secrets.PORT }}
     - name: Build docker 🐳
       run: docker build . -t=wallet-api:ghb-$GITHUB_RUN_NUMBER
-    - name: Build
-      run: npm run build

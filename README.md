@@ -1,6 +1,8 @@
 # Description
 This is a micro service to administration the money 💵🤑 of the user. This wallet is built with nodejs 🟩 and typescript 🟦
 
+![Github](https://github.com/zearkiatos/wallet-api/actions/workflows/action.yml/badge.svg)
+
 # Make With
 
 [![JavaScript](https://img.shields.io/badge/javascript-ead547?style=for-the-badge&logo=javascript&logoColor=white&labelColor=000000)]()
