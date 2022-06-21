@@ -1,13 +1,10 @@
-import express, { Application, Response, Request } from "express";
+import express, { Application } from "express";
 import { loadControllers } from "awilix-express";
-import { container } from "./container";
-import { TestService } from "./services/TestService";
+import LoadContainer from "./container";
 
 const app: Application = express();
 
-app.get("/", (request: Request, response: Response) => {
-  response.send("Running... 🤖");
-});
+LoadContainer(app);
 
 app.use(loadControllers("controllers/*.ts", { cwd: __dirname }));
 

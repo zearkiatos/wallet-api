@@ -2,6 +2,7 @@
 This is a micro service to administration the money 💵🤑 of the user. This wallet is built with nodejs 🟩 and typescript 🟦
 
 ![Github](https://github.com/zearkiatos/wallet-api/actions/workflows/action.yml/badge.svg)
+![GitlabCI](https://gitlab.com/caprilespe/wallet-api/badges/develop/pipeline.svg)
 
 # Make With
 
