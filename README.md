@@ -3,6 +3,7 @@ This is a micro service to administration the money 💵🤑 of the user. This w
 
 ![Github](https://github.com/zearkiatos/wallet-api/actions/workflows/action.yml/badge.svg)
 ![GitlabCI](https://gitlab.com/caprilespe/wallet-api/badges/develop/pipeline.svg)
+![TravisCI](https://api.travis-ci.com/zearkiatos/wallet-api.svg?branch=develop)
 
 # Make With
 
