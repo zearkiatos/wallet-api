@@ -19,6 +19,24 @@ class SubscriptionRepository {
 
     return null;
   }
+
+  public async store(entry: Subscription): Promise<void> {
+    const now = new Date();
+    await connection.execute(
+      `INSERT INTO wallet_subscription(user_id, code, amount, cron, created_at, updated_at) VALUES(${entry.userId},${entry.code}, ${entry.amount},${entry.cron}, ${now}, ${now})`
+    );
+  }
+
+  public async update(entry: Subscription): Promise<void> {
+    const now = new Date();
+    await connection.execute(
+      `UPDATE wallet_subscription SET user_id=${entry.userId}, code=${entry.code}, amount=${entry.amount}, cron=${entry.cron}, updated_at=${now} WHERE id=${entry.id}`
+    );
+  }
+
+  public async delete(id: number): Promise<void> {
+    await connection.execute(`DELETE FROM wallet_subscription WHERE id=${id}`);
+  }
 }
 
 export default SubscriptionRepository;
