@@ -12,11 +12,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 
-grant all privileges on *.* to 'admin'@'*';
+-- grant all privileges on *.* to 'admin'@'*';
 
 -- Volcando estructura de base de datos para kodoti_wallet
-CREATE DATABASE IF NOT EXISTS `kodoti_wallet` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `kodoti_wallet`;
+CREATE DATABASE IF NOT EXISTS `wallet` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `wallet`;
 
 -- Volcando estructura para tabla kodoti_wallet.auth_user
 CREATE TABLE IF NOT EXISTS `auth_user` (

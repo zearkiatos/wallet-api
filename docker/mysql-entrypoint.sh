@@ -1,1 +1,1 @@
-sh -c 'mysql -u admin -p${MYSQL_PASSWORD} </docker/mysql/mysql-script.sql'
+mysql --port 3306 -u admin wallet -p${MYSQL_PASSWORD} </docker/mysql/mysql-script.sql
