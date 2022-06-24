@@ -1,7 +1,8 @@
 import connection from "../../../persistence/MySqlPersistence";
 import Subscription from "../../domain/Subscription";
+import SubscriptionRepository from "../SubscriptionRepository";
 import { subscriptionsMapper, subscriptionMapper } from "./SubscriptionAdapter";
-class SubscriptionRepository {
+class SubscriptionMySQLRepository implements SubscriptionRepository {
   public async all(): Promise<Subscription[]> {
     const [rows]: any[] = await connection.execute(
       "SELECT * FROM wallet_subscription ORDER BY id DESC"
@@ -34,9 +35,9 @@ class SubscriptionRepository {
     );
   }
 
-  public async delete(id: number): Promise<void> {
+  public async remove(id: number): Promise<void> {
     await connection.execute(`DELETE FROM wallet_subscription WHERE id=${id}`);
   }
 }
 
-export default SubscriptionRepository;
+export default SubscriptionMySQLRepository;
