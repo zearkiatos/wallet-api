@@ -3,6 +3,7 @@ import { loadControllers } from "awilix-express";
 import LoadContainer from "./container";
 
 const app: Application = express();
+app.use(express.json());
 
 LoadContainer(app);
 

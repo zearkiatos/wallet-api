@@ -23,6 +23,7 @@ services:
     build:
       context: .
       dockerfile: mysql.Dockerfile
+    container_name: mysql
     env_file:
       - mysql.env
     ports:

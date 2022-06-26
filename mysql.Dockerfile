@@ -7,5 +7,3 @@ COPY ./docker/mysql /docker/mysql/
 COPY ./docker/mysql-entrypoint.sh /docker/
 
 EXPOSE 3306
-
-# ENTRYPOINT [ "sh", "./docker/mysql-entrypoint.sh" ]

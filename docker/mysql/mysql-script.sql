@@ -76,5 +76,5 @@ CREATE TABLE IF NOT EXISTS `wallet_subscription` (
 
 
 -- Default user
-INSERT INTO `auth_user` (`email`, `password`, `created_at`, `updated_at`) VALUES
-	('eduardo@kodoti.com', 'jZae727K08KaOmKSgOaGzww/XVqGr/PKEgIMkjrcbJI=', '2020-07-09 00:36:13', NULL);
+-- INSERT INTO `auth_user` (`email`, `password`, `created_at`, `updated_at`) VALUES
+-- 	('caprilespe@outlook.com', 'jZae727K08KaOmKSgOaGzww/XVqGr/PKEgIMkjrcbJI=', '2020-07-09 00:36:13', NULL);

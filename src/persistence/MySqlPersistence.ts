@@ -6,6 +6,7 @@ const connection = createPool({
   user: config.DATABASE?.USER,
   password: config.DATABASE?.PASSWORD,
   database: config.DATABASE?.DATABASE,
+  port: config.DATABASE?.PORT,
   decimalNumbers: true,
 });
 

@@ -12,7 +12,7 @@ const Container = (app: Application) => {
 
   container.register({
     subscriptionRepository: asClass(SubscriptionMySQLRepository).scoped(),
-    subscriptionService: assClass(SubscriptionService).scoped(),
+    subscriptionService: asClass(SubscriptionService).scoped(),
     testService: asClass(TestService).scoped(),
   });
 
