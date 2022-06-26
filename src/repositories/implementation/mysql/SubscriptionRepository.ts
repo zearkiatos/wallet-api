@@ -38,6 +38,19 @@ class SubscriptionMySQLRepository implements SubscriptionRepository {
   public async remove(id: number): Promise<void> {
     await connection.execute(`DELETE FROM wallet_subscription WHERE id=${id}`);
   }
+
+  public async findByUserAndCode(
+    userId: number,
+    code: string
+  ): Promise<Subscription | null> {
+    const [rows]: any[] = await connection.execute(
+      `SELECT * FROM wallet_subscription WHERE user_id = ${userId} AND code=${code}`
+    );
+
+    if (rows.length) return subscriptionMapper(rows[0]);
+
+    return null;
+  }
 }
 
 export default SubscriptionMySQLRepository;
