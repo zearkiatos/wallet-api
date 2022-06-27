@@ -2,7 +2,7 @@ import { Application } from "express";
 import { createContainer, asClass } from "awilix";
 import { scopePerRequest } from "awilix-express";
 import { TestService } from "./services/TestService";
-import SubscriptionMySQLRepository from "./repositories/implementation/mysql/SubscriptionRepository";
+import SubscriptionMySQLRepository from "./repositories/implementation/mysql/SubscriptionMySQLRepository";
 import SubscriptionService from "./services/SubscriptionService";
 
 const Container = (app: Application) => {

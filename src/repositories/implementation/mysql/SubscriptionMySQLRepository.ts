@@ -1,6 +1,6 @@
 import connection from "../../../persistence/MySqlPersistence";
 import Subscription from "../../domain/Subscription";
-import SubscriptionRepository from "../SubscriptionRepository";
+import SubscriptionRepository from "../../SubscriptionRepository";
 import { subscriptionsMapper, subscriptionMapper } from "./SubscriptionAdapter";
 class SubscriptionMySQLRepository implements SubscriptionRepository {
   public async all(): Promise<Subscription[]> {
