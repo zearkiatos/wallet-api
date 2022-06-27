@@ -21,13 +21,13 @@ class MovementMySQLRepository implements MovementRepository {
           return movementsMapper(rows);
     }
     public async store(entry: Movement): Promise<void> {
-        const now = new Date();
+        const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
         await connection.execute(
           `INSERT INTO wallet_movement(user_id, type, amount, created_at, updated_at) VALUES(${entry.userId},${entry.type}, ${entry.amount}, ${now}, ${now})`
         );
     }
     public async update(entry: Movement): Promise<void> {
-        const now = new Date();
+        const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
         await connection.execute(
           `UPDATE wallet_movement SET user_id=${entry.userId}, type=${entry.type}, amount=${entry.amount}, updated_at=${now} WHERE id=${entry.id}`
         );

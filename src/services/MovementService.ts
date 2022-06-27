@@ -39,6 +39,7 @@ class MovementService {
       } as Balance);
     } else {
       balance.amount += entry.amount;
+      balance.userId = entry.userId;
       await this.balanceRepository.update(balance);
     }
 
@@ -48,11 +49,11 @@ class MovementService {
   public async outcome(entry: MovementCreateDTO, balance: Balance | null) {
     if (!balance || balance.amount < entry.amount) {
       throw new ApplicationException("User does not have enough balace.");
-    }
-    else {
-        balance.amount -= entry.amount;
-        await this.balanceRepository.update(balance);
-        await this.movementRepository.store(entry as Movement);
+    } else {
+      balance.amount -= entry.amount;
+      balance.userId = entry.userId;
+      await this.balanceRepository.update(balance);
+      await this.movementRepository.store(entry as Movement);
     }
   }
 }

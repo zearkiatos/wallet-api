@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
 import { route, GET, POST, PUT, DELETE } from "awilix-express";
 import SubscriptionService from "../services/SubscriptionService";
-import Subscription from "../repositories/domain/Subscription";
-import BaseController from "../common/Controllers/baseController";
+import BaseController from "../common/Controllers/BaseController";
 import { StatusCodes } from "http-status-codes";
+import { SubscriptionCreateDTO, SubscriptionUpdateDTO } from "../DTOs/Subscription";
 
 @route("/subscriptions")
 class SubscriptionController extends BaseController {
@@ -44,7 +44,7 @@ class SubscriptionController extends BaseController {
         code: request.body.code,
         amount: request.body.amount,
         cron: request.body.cron,
-      } as Subscription);
+      } as SubscriptionCreateDTO);
       response.send();
     } catch (ex) {
       this.handleException(ex, response);
@@ -60,7 +60,7 @@ class SubscriptionController extends BaseController {
         code: request.body.code,
         amount: request.body.amount,
         cron: request.body.cron,
-      } as Subscription);
+      } as SubscriptionUpdateDTO);
       response.send();
     } catch (ex) {
       this.handleException(ex, response);

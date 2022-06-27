@@ -30,13 +30,14 @@ class BalanceMySQLRepository implements BalanceRepository {
     return balancesMapper(rows);
   }
   public async store(entry: Balance): Promise<void> {
-    const now = new Date();
+    const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    console.log('now', now);
     await connection.execute(
       `INSERT INTO wallet_balance(user_id, amount, created_at, updated_at) VALUES(${entry.userId}, ${entry.amount}, ${now}, ${now})`
     );
   }
   public async update(entry: Balance): Promise<void> {
-    const now = new Date();
+    const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
     await connection.execute(
       `UPDATE wallet_balance SET user_id=${entry.userId}, amount=${entry.amount}, updated_at=${now} WHERE id=${entry.id}`
     );
