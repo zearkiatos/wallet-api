@@ -52,7 +52,7 @@ class MovementService {
     else {
         balance.amount -= entry.amount;
         await this.balanceRepository.update(balance);
-        awiat this.movementRepository.store(entry as Movement);
+        await this.movementRepository.store(entry as Movement);
     }
   }
 }
