@@ -1,7 +1,7 @@
 import connection from "../../../persistence/MySqlPersistence";
 import BalanceRepository from "../../BalanceRepository";
 import Balance from "../../domain/Balance";
-import { balanceMapper, balancesMapper } from "./BalanceAdapter";
+import { balanceMapper, balancesMapper } from "../Adapter/BalanceAdapter";
 
 class BalanceMySQLRepository implements BalanceRepository {
   public async find(id: number): Promise<Balance | null> {
