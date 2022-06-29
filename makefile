@@ -9,5 +9,6 @@ docker-down:
 	docker compose down
 
 docker-dev-db:
-	docker exec -it wallet-api-mysql-1 sh /docker/mysql-entrypoint.sh
+	docker exec -it mysql sh /docker/mysql-entrypoint.sh
+	docker exec -it mssql sh /docker/mssql-entrypoint.sh
 
