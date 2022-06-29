@@ -6,8 +6,10 @@ const connection = new ConnectionPool({
   database: config.DATABASE?.DATABASE as string,
   user: config.DATABASE?.USER as string,
   password: config.DATABASE?.PASSWORD as string,
+  port: config.DATABASE?.PORT as number,
   options: {
     enableArithAbort: true,
+    trustServerCertificate: true
   },
 }).connect();
 
