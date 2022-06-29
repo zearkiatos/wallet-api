@@ -1,7 +1,7 @@
 import connection from "../../../persistence/MySqlPersistence";
 import Movement from "../../domain/Movement";
 import MovementRepository from "../../MovementRepository";
-import { movementsMapper, movementMapper } from "./MovementAdapter";
+import { movementsMapper, movementMapper } from "../Adapter/MovementAdapter";
 
 class MovementMySQLRepository implements MovementRepository {
     public async find(id: number): Promise<Movement | null> {
