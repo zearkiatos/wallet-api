@@ -14,8 +14,10 @@ services:
       - "3001:3000"
     depends_on: 
       - mysql
+      - mssql
     links: 
       - mysql
+      - mssql
     networks:
       devnetwork:
   mysql:
@@ -30,6 +32,19 @@ services:
       - "3307:3306"
     volumes:
       - "./mysql_volume:/var/lib/mysql"
+    networks:
+      devnetwork:
+  mssql:
+    build:
+      context: .
+      dockerfile: mssql.Dockerfile
+    container_name: mssql
+    env_file:
+      - mssql.env
+    ports:
+      - "1401:1433"
+    volumes:
+      - "./mssql_volume:/var/opt/mssql"
     networks:
       devnetwork:
 networks:
