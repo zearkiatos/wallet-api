@@ -17,9 +17,9 @@ const Container = (app: Application) => {
   });
 
   container.register({
-    subscriptionRepository: asClass(SubscriptionMSSQLRepository).scoped(),
-    movementRepository: asClass(MovementMSSQLRepository).scoped(),
-    balanceRepository: asClass(BalanceMSSQLRepository).scoped(),
+    subscriptionRepository: asClass(SubscriptionMySQLRepository).scoped(),
+    movementRepository: asClass(MovementMySQLRepository).scoped(),
+    balanceRepository: asClass(BalanceMySQLRepository).scoped(),
     subscriptionService: asClass(SubscriptionService).scoped(),
     movementService: asClass(MovementService).scoped(),
     testService: asClass(TestService).scoped(),

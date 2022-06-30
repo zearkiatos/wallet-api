@@ -1,6 +1,6 @@
 import { ConnectionPool } from "mssql";
 import config from "../config";
-
+console.log(config.DATABASE?.PASSWORD);
 const connection = new ConnectionPool({
   server: config.DATABASE?.HOST as string,
   database: config.DATABASE?.DATABASE as string,
