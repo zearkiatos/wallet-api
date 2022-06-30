@@ -12,9 +12,9 @@ services:
       - ".:/usr/src/app"
     ports:
       - "3001:3000"
-    depends_on: 
+    depends_on:
+      - mssql 
       - mysql
-      - mssql
     links: 
       - mysql
       - mssql
@@ -42,9 +42,10 @@ services:
     env_file:
       - mssql.env
     ports:
-      - "1401:1433"
+      - "1433:1433"
     volumes:
       - "./mssql_volume:/var/opt/mssql"
+      - "./docker/mssql/mssql-script.sql:/usr/config/setup.sql"
     networks:
       devnetwork:
 networks:

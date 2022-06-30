@@ -3,9 +3,12 @@ import { createContainer, asClass } from "awilix";
 import { scopePerRequest } from "awilix-express";
 import { TestService } from "./services/TestService";
 import SubscriptionMySQLRepository from "./repositories/implementation/mysql/SubscriptionMySQLRepository";
+import SubscriptionMSSQLRepository from "./repositories/implementation/mssql/SubscriptionMSSQLRepository";
 import SubscriptionService from "./services/SubscriptionService";
 import MovementMySQLRepository from "./repositories/implementation/mysql/MovementMySQLRepository";
+import MovementMSSQLRepository from "./repositories/implementation/mssql/MovementMSSQLRepository";
 import BalanceMySQLRepository from "./repositories/implementation/mysql/BalanceMySQLRepository";
+import BalanceMSSQLRepository from "./repositories/implementation/mssql/BalanceMSSQLRepository";
 import MovementService from "./services/MovementService";
 
 const Container = (app: Application) => {
