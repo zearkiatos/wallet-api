@@ -13,5 +13,7 @@ const database = {
 };
 
 database._balanceId = database.balance.length;
+database._movementId = database.movements.length;
+database._subscriptionId = database.subscription.length;
 
 export default database;
