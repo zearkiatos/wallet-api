@@ -20,13 +20,17 @@ jobs:
     - name: Generate build number
       run: echo "The build number $GITHUB_RUN_NUMBER 🏗"
     - name: Install dependencies
-      run: npm install
+      run: | 
+        npm install
+        npm install -g mocha
     - name: Create .env
       run: |
         touch .env &&
         echo "NODE_ENV=${NODE_ENV}" > .env
         echo "APP_ENV=${APP_ENV}" >> .env
         echo "PORT=${PORT}" >> .env
+    - name: Test 🧪
+      run: npm run test
       env:
         NODE_ENV: ${{ secrets.NODE_ENV }}
         APP_ENV: ${{ secrets.APP_ENV }}

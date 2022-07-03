@@ -2,8 +2,8 @@ import BalanceBuilder from "../builders/BalanceBuilder";
 const database = {
   balance: [
     new BalanceBuilder().build(),
-    new BalanceBuilder().withParam("id", 2).withParam("user_id", 2).build(),
-    new BalanceBuilder().withParam("id", 3).withParam("user_id", 3).build(),
+    new BalanceBuilder().withId(2).withUserId(2).build(),
+    new BalanceBuilder().withId(3).withUserId(3).build(),
   ],
   movements: [],
   subscription: [],
