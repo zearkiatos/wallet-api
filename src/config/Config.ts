@@ -5,6 +5,8 @@ interface Config {
     ENVIRONMENT: string | undefined;
     PORT: number | undefined;
     DATABASE: MySql | MSSql | undefined;
+    JWT_SECRET_KEY: string
+
   }
   
   export default Config;
