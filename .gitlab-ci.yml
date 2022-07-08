@@ -1,6 +1,7 @@
 image: node:15-alpine
 stages:
   - install
+  - test
   - docker
 
 install-dependencies:
@@ -11,6 +12,15 @@ install-dependencies:
     expire_in: 1hr
     paths:
       - /
+
+test-app:
+  stage: test
+  dependencies:
+    - install-dependencies
+  script:
+    - echo "Testing the app 🧪"
+    - npm install -g mocha
+    - npm run test
 
 build-docker:
   image: docker:latest
@@ -26,6 +36,7 @@ build-docker:
       - node_modules/
   dependencies:
     - install-dependencies
+    - test-app
   script:
     - echo "Build docker 🐳"
     - docker build . -t=wallet-api:glb-${CI_PIPELINE_IID}
