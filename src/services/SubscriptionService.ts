@@ -20,7 +20,7 @@ class SubscriptionService {
   }
 
   public async store(entry: SubscriptionCreateDTO): Promise<void> {
-    const originalEntry = this.subscriptionRepository.findByUserAndCode(
+    const originalEntry = await this.subscriptionRepository.findByUserAndCode(
       entry.userId,
       entry.code
     );

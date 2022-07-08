@@ -19,6 +19,12 @@ class CheckController {
   public test(request: Request, response: Response): void {
     response.send(this.testService.get());
   }
+
+  @route("/user-payload")
+  @GET()
+  public userPayload(request: Request, response: Response): void {
+    response.send((request as any).auth);
+  }
 }
 
 export default CheckController;
