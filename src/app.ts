@@ -1,11 +1,14 @@
 import express, { Application } from "express";
 import { loadControllers } from "awilix-express";
 import { expressjwt as jwt } from "express-jwt";
+import cors from 'cors';
 import LoadContainer from "./container";
 import config from "./config";
 
 const app: Application = express();
 app.use(express.json());
+
+app.use(cors());
 
 LoadContainer(app);
 
