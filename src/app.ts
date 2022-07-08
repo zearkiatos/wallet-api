@@ -14,6 +14,8 @@ if (config.JWT_SECRET_KEY) {
     jwt({
       secret: config.JWT_SECRET_KEY,
       algorithms: ["HS256"],
+    }).unless({
+      path: ['/', '/check']
     })
   );
 }
