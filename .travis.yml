@@ -1,0 +1,14 @@
+language: node_js
+services:
+  - docker
+cache:
+  directories:
+    - ~/.npm
+node_js:
+  - '15'
+git:
+  depth: 3
+script:
+  - docker build . -t=wallet-api:travis-build-$TRAVIS_BUILD_NUMBER
+on:
+  branch: develop 

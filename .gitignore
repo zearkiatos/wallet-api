@@ -1,0 +1,6 @@
+node_modules
+.env
+*.js
+.vscode
+mysql_volume
+mssql_volume

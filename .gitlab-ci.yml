@@ -1,0 +1,46 @@
+image: node:15-alpine
+stages:
+  - install
+  - test
+  - docker
+
+install-dependencies:
+  stage: install
+  script:
+    - npm install
+  artifacts:
+    expire_in: 1hr
+    paths:
+      - /
+
+test-app:
+  stage: test
+  dependencies:
+    - install-dependencies
+  script:
+    - echo "Testing the app 🧪"
+    - npm install -g mocha
+    - npm run test
+
+build-docker:
+  image: docker:latest
+  variables:
+    DOCKER_DRIVER: overlay
+    CRYPTOGRAPHY_DONT_BUILD_RUST: 1
+  services:
+  - docker:dind
+  stage: docker
+  environment: staging
+  cache:
+    paths:
+      - node_modules/
+  dependencies:
+    - install-dependencies
+    - test-app
+  script:
+    - echo "Build docker 🐳"
+    - docker build . -t=wallet-api:glb-${CI_PIPELINE_IID}
+  artifacts:
+    expire_in: 1hr
+    paths:
+      - build
